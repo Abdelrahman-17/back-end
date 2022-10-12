@@ -8,12 +8,16 @@ class appledevices {
     public $color = 'silver';
     public $ownername;
 
+    //constants
+    //const chip = 'A9';
+      const ownername = 1;
+
     //methods
-    public function getspecification(/*$owner*/) {
+    public function getspecification() {
         //echo 'this iphone ram is: ' . $this->ram.'<br>';
         //echo 'this iphone insh is: ' . $this->insh.'<br>';
-        if(strlen($this->ownername/*$owner*/) > 3){
-            echo 'owner name cant be less than 3 characters long';
+        if(strlen($this->ownername) > self::ownername){
+            echo 'owner name cant be less than '.self::ownername.' characters long';
         }else{
             echo 'your name has been set';
         }
@@ -27,7 +31,9 @@ $iphone6plus-> insh = '5 insh';
 $iphone6plus-> space = '23 GB';
 $iphone6plus-> color = 'red';
 $iphone6plus-> ownername = 'ssssss';
-$iphone6plus-> getspecification(/*'os'*/);
+$iphone6plus-> getspecification();
+echo appledevices::ownername;
+//echo $iphone6plus::ownername;
 
 echo '<pre>';
 var_dump($iphone6plus);
